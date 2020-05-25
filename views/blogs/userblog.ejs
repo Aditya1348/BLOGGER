@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BLOGGER</title>
+       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+       <link rel="stylesheet" type="text/css" href="/userblog.css">
+   </head>
+    <body>
+
+<div class="ui top fixed menu">
+<div class="five ui buttons">
+  <a href="/user/home/<%=user._id%>" class="ui button black "> <i class="user icon"></i> <%=user.username%></a>
+ <a href="/blogs/show" class="ui button purple ">AllBlogs</a>
+ <a href="/blogs/<%=user.username%>/userblog" class="ui button pink ">YourBlogs</a>
+ <a href="/blogs/new" class="ui button green ">CreateBlog</a>
+ <a href="/logout" class="ui button red ">LogOut</a>
+</div>
+</div>
+
+<p class="space"></p>
+
+  <div class="ui container">
+           <% if(error && error.length>0){%>
+            <div class="danger-massage" role="alert">
+                <%=error%>
+            </div>
+            <% } %>
+                <% if(success && success.length>0){%>
+                    <div class="success-massage" role="alert">
+                        <%=success%>
+                    </div>
+                    <% } %>
+      
+     <div class="allcard ">
+
+                            <% found.forEach(function(blog){%>
+                                <div class="mycard">
+                                    <h5 class="mycard-title">
+                                        <%=blog.title%>
+                                    </h5>
+                                    <div class="mycard-image">
+                                        <img class="image" src="<%=blog.image%>" alt="Card image cap">
+                                    </div>
+                                   <div class="mycardButton">
+                                      <a href="/blogs/<%=blog._id%>/edit" class="button_edit">Edit</a>
+                                      <form action="/blogs/<%=blog._id%>/delete?_method=DELETE" method="POST">
+                                          <button class="button_delete" type="submit">Del</button>
+                                      </form>
+                                   </div>
+                                    
+                                </div>
+                                <% })%>
+                              </div>
+
+  </div>
+
+
+      
+                   
+
+
+<%-include("../partials/footer") %>
+

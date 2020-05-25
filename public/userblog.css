@@ -1,0 +1,105 @@
+body {
+    background-color: #eceff1;
+}
+
+.allcard {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.mycard {
+    width: 300px;
+    padding: 10px;
+    margin: 1rem;
+    box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.mycard-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    background-color: #eceff1;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.mycard {
+    transition: all ease 500ms;
+}
+
+.mycard:hover {
+    transform: scale(1.1);
+    opacity: 0.7;
+}
+
+.image {
+    width: 280px;
+    height: 250px;
+    background-position: 50% 50%;
+    border-radius: 10px;
+}
+
+.space {
+    margin-top: 7rem;
+}
+
+.danger-massage {
+    margin-top: 20px;
+    background-color: rgba(255, 0, 0, 0.308);
+    color: rgb(241, 14, 14);
+    height: 60px;
+    font-size: 20px;
+    padding: 20px 0px 10px 30px;
+    border-radius: 20px;
+}
+
+.success-massage {
+    margin-top: 20px;
+    background-color: rgba(7, 241, 7, 0.267);
+    color: rgb(18, 189, 3);
+    font-size: 20px;
+    height: 60px;
+    padding: 20px 0px 10px 30px;
+    border-radius: 20px;
+}
+
+.button_edit {
+    outline: none;
+    padding: 5px 17px;
+    background-color: rgb(35, 228, 9);
+    border: none;
+    border-radius: 50px;
+    cursor: default;
+    color: rgb(70, 69, 68);
+    transition: all 0.3s ease 0s;
+}
+
+.button_edit:hover {
+    background-color: rgba(0, 169, 14, 0.685);
+}
+
+.button_delete {
+    outline: none;
+    padding: 5px 17px;
+    background-color: rgb(228, 9, 38);
+    border: none;
+    border-radius: 50px;
+    cursor: default;
+    color: rgb(70, 69, 68);
+    transition: all 0.3s ease 0s;
+}
+
+.button_delete:hover {
+    background-color: rgba(169, 0, 37, 0.685);
+}
+
+.mycardButton {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

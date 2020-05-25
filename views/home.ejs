@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BLOGGER</title>
+          <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous">
+       
+      <link rel="stylesheet" type="text/css" href="/home.css">
+       <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
+     
+   </head>
+    <body>
+
+   <header>
+       <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+  <div class="container">
+   
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">BLOGGER</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+     
+     
+      <ul class="nav navbar-nav navbar-right change">
+        <li><a class="changeable" href="#">About</a></li>
+         <li><a  class="changeable" href="/login">SignIn</a></li>
+          <li><a class="changeable" href="/register">Register</a></li>
+      
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1" ></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2" ></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+     <div class="banner bannerFirst"></div>
+      <div class="carousel-caption">
+        <% if(success && success.length>0){%>
+                    <div class="success-massage" role="alert">
+                        <%=success%>
+                    </div>
+                    <% } %>
+       <h2 class="animate__animated animate__zoomIn" style="animation-delay:1s">We are <span>blogger</span> </h2>
+        <h3 class="animate__animated animate__fadeInLeft" style="animation-delay:1s">Create Your Blog with Us</h3>
+        <p class="animate__animated animate__zoomIn" style="animation-delay:1s"><a href="/blogs/show">Get Started ></a></p>
+      </div>
+    </div>
+    <div class="item ">
+      <div class="banner bannerSecond" ></div>
+      <div class="carousel-caption">
+        <% if(success && success.length>0){%>
+                    <div class="success-massage" role="alert">
+                        <%=success%>
+                    </div>
+                    <% } %>
+         <h2 class="animate__animated  animate__bounceInRight" style="animation-delay:1s">We are <span>blogger</span> </h2>
+        <h3 class="animate__animated animate__bounceInLeft" style="animation-delay:2s">Create Your Blog with Us</h3>
+        <p class="animate__animated animate__bounceInRight" style="animation-delay:3s"><a href="/blogs/show">Get Started ></a></p>
+      </div>
+    </div>
+
+      <div class="item ">
+      <div class="banner bannerThird" ></div>
+      <div class="carousel-caption">
+        <% if(success && success.length>0){%>
+                    <div class="success-massage" role="alert">
+                        <%=success%>
+                    </div>
+                    <% } %>
+        <h2 class="animate__animated animate__slideInDown " style="animation-delay:1s">We are <span>blogger</span> </h2>
+        <h3 class="animate__animated animate__fadeInUp " style="animation-delay:2s">Create Your Blog with Us</h3>
+        <p class="animate__animated animate__zoomIn" style="animation-delay:3s"><a href="/blogs/show">Get Started ></a></p>
+      </div>
+    </div>
+  
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+   </header>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+</body>
+
+</html>

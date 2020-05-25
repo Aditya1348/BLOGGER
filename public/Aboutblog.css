@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap');
+.button_same_group {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+.cta {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    background-color: black;
+}
+
+.button_same_group_success {
+    outline: none;
+    padding: 9px 25px;
+    background-color: rgb(35, 228, 9);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.button_same_group_success:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+}
+
+.button_same_group_danger {
+    outline: none;
+    padding: 9px 25px;
+    background-color: rgb(228, 23, 9);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.button_same_group_danger:hover {
+    background-color: rgba(241, 39, 13, 0.671);
+}
+
+.logo {
+    color: rgb(10, 219, 247);
+    font-family: 'Cairo', sans-serif;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.welcome {
+    background-color: grey;
+    padding: 10px 20px 10px 40px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.welcome_massage {
+    font-family: 'Cairo', sans-serif;
+    color: antiquewhite;
+    letter-spacing: 2px;
+}
+
+.yourAccount {
+    outline: none;
+    padding: 9px 25px;
+    background-color: rgb(7, 240, 209);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.yourAccount:hover {
+    background-color: rgba(13, 241, 241, 0.671);
+}
+
+.space {
+    margin-top: 10rem;
+}
+
+.imagethumb img {
+    width: 100%;
+    height: auto;
+}
+
+.imagethumb {
+    padding: 0;
+}
+
+.repadding {
+    padding: 9px;
+}
+
+.profilespace {
+    margin-top: 40px;
+}
+
+.profileimage {
+    background-size: cover;
+    background-attachment: fixed;
+    position: fixed;
+    height: 400px;
+    width: 300px;
+    background-position: 50% 50%;
+}
+
+
+/* .jumbotron.bg-info {
+    height: 4rem;
+} */
+
+.forminline {
+    display: inline;
+}
+
+.bloggtitle {
+    color: crimson;
+}
+
+.comment {
+    margin: 1rem 1.5rem;
+    box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
+    background-color: white;
+    border-radius: 10px;
+    transition: all 0.3s ease 0s;
+}
+
+.comment:hover {
+    transform: scale(1.08);
+    opacity: 0.7;
+}
+
+.comment-three {
+    padding: 10px 10px 5px 10px;
+    background-color: rgba(137, 43, 226, 0.568);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.comment-button {
+    outline: none;
+    padding: 5px 10px;
+    background-color: rgb(228, 9, 38);
+    border: none;
+    border-radius: 50px;
+    cursor: default;
+    color: rgb(70, 69, 68);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+
+.comment-button:hover {
+    background-color: rgba(169, 0, 37, 0.685);
+}
+
+.comment-massage {
+    padding: 10px 10px 10px 10px;
+}
+
+.comment-massage small {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.Add-comment-button {
+    outline: none;
+    padding: 10px 20px;
+    background-color: rgb(3, 252, 156);
+    box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.61);
+    border: none;
+    border-radius: 50px;
+    cursor: default;
+    color: rgb(70, 69, 68);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+
+.Add-comment-button:hover {
+    background-color: rgba(5, 151, 248, 0.562);
+}
+
+.blog-info {
+    border-left: 15px rgba(0, 0, 0, 0.596) solid;
+    padding: 10px 10px 10px 5px;
+    background-color: rgb(128, 10, 240);
+    color: white;
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+
+.time1-improve {
+    border-left: 15px rgba(14, 14, 11, 0.521) solid;
+    padding: 10px 10px 10px 5px;
+    background-color: darkcyan;
+    margin-top: 0;
+    letter-spacing: 2px;
+    font-size: 15px;
+}
+
+.below-image {
+    margin: 10px 5px 10px 5px;
+}
+
+.below-image-title {
+    padding: 5px 5px 5px 5px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: rgba(0, 0, 255, 0.829);
+    font-weight: 700;
+}
+
+.below-image-submitted {
+    color: green;
+    font-weight: 600;
+}
+
+.below-image-creator {
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 20px;
+}

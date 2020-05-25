@@ -1,0 +1,74 @@
+.space {
+    margin-top: 10rem;
+}
+
+.back-button {
+    margin-top: 20px;
+}
+
+.spacedown {
+    margin-top: 40px;
+}
+
+.content-information {
+    padding: 0;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: rgb(89, 94, 94);
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 20px;
+}
+
+.content-icon {
+    background-color: rgb(22, 20, 20);
+    padding: 10px 20px 10px 30px;
+    color: white;
+    font-size: 25px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.content-data {
+    padding: 10px 10px;
+    width: auto;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.bottom-button {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.bottom-button-delete {
+    outline: none;
+    color: white;
+    padding: 15px 25px;
+    background-color: rgb(228, 23, 9);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.bottom-button-edit {
+    outline: none;
+    color: white;
+    padding: 15px 25px;
+    background-color: rgb(6, 207, 49);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.bottom-button-edit:hover {
+    background-color: rgba(2, 122, 28, 0.671);
+}
+
+.bottom-button-delete:hover {
+    background-color: rgba(99, 5, 44, 0.671);
+}

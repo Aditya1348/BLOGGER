@@ -1,0 +1,105 @@
+<%-include("../partials/header") %>
+<a href="/user/home/<%=user._id%>" class="ui icon  purple button button1">
+<i class="user icon"></i> GoToAccount
+</a>
+<a href="/blogs/show" class="ui icon  purple button button1">
+ <i class="eye icon"></i> AllBlogs
+</a>
+<a href="/blogs/<%=user.username%>/userblog" class="ui icon  purple button button1">
+ <i class="eye icon"></i> YourBlogs
+</a>
+<a href="/logout" class="ui icon  red button button1">
+ <i class="sign out alternate icon"></i> LogOut
+</a>
+
+  <% if(error && error.length>0){%>
+   <div class="ui container">
+      <div class="danger-massage" role="alert">
+           <%=error%>
+     </div>
+   </div>
+     <% } %>
+    <% if(success && success.length>0){%>
+      <div class="ui container">
+          <div class="success-massage" role="alert">
+              <%=success%>
+       </div>
+      </div>
+    <% } %>
+ 
+<div class="ui centered grid">
+ 
+  <div class="eight wide tablet six wide computer column">
+  <div class="ui middle aligned center aligned grid">
+
+
+
+
+
+  <div class="column">
+    <h2 class="ui teal image header">
+    
+      <div class="content">
+      Edit Your Blog
+      </div>
+    </h2>
+    <form class="ui large form" action="/blogs/<%=found._id%>/edit?_method=PUT" method="POST" >
+      <div class="ui stacked segment">
+  
+       
+          <div class="field">
+          <div class="ui left icon input">
+           <i class="thumbtack icon"></i>
+            <input type="text"  name="data[title]" value="<%=found.title%>"  required>
+          </div>
+        </div>
+         <div class="field">
+              <i class="pencil alternate icon"></i>Description</title> 
+         </div>
+        <div class="field">
+         
+          <div class="ui left icon input">
+         
+           <textarea   name="data[description]"   ><%=found.description%></textarea>
+          </div>
+        </div>
+        <div >
+         <button class="ui fluid large orange submit button" type="submit">Update</button></div>
+       
+        
+      </div>
+
+      <div class="ui error message">
+      
+      
+      </div>
+
+    </form>
+
+    
+  </div>
+</div>
+  
+  </div>
+</div>
+
+
+
+<%-include("../partials/footer") %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

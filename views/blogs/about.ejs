@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BLOGGER</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/Aboutblog.css">
+</head>
+
+<body >
+
+
+<div class="fixed-top">
+   <header>
+        <h2 class="logo">BLOGGER</h2>
+       
+             <div>
+               <% if(!user){%>
+                  <a  class="cta" title="LogIn" href="/login"><button class="button_same_group_success">Login</button></a>
+                <a class="cta" title="LogIn" href="/register"><button class="button_same_group_success">Register</button></a>
+                 <%}else{%>
+                <a class="cta"  title="LogIn" href="/logout"><button class="button_same_group_danger">LogOut</button></a>
+                  <%}%>
+             </div>
+            
+       
+    </header>
+
+    <div class="container welcome ">
+         
+           <% if( user){ %>
+                <a  href="/user/home/<%=user._id%>"><button class="yourAccount">Go to your Account</button></a>
+               <%} else{%>
+                   <a  href="/"><button class="yourAccount">Home</button></a>
+                <%}%>
+                  <a href="/blogs/show"  ><button class="yourAccount">Back</button></a>
+       </div>
+  
+
+</div>
+  <p class="space"></p>
+<div id="showcontainer" class="container">
+   <div class="row">
+        <div class="col-md-3">
+       <h2 class="lead blog-info">BLOG INFO</h2>
+       <h4 class="time1-improve"><%=moment(blog.createdAt).fromNow()%></h4>
+
+<div class="pos-f-t">
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+      <h4 class="text-white">Description</h4>
+      <span class="text-muted"> <%=blog.description %></span>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+</div>
+   </div>
+   
+   <div class="col-md-9">
+      <div class="img-thumbnail">
+         
+           <div class="img-thumbnail imagethumb d-flex justify-content-center">
+           <img class="img-fluid" src="<%=blog.image %>" alt="">
+            </div> 
+            <div class="repadding">
+              <div class=" d-flex justify-content-between below-image">
+            <h4 class="below-image-title"> <%=blog.title %></h4>
+               <p>
+            <em class="below-image-submitted"> Submitted By:</em> <a class="below-image-creator" href=""> <%=blog.creator %></a>
+            </p>
+         
+            </div>
+           <a href="/blogs/<%=blog._id%>/newcomment" ><button class="Add-comment-button">Add Comment</button></a>
+    <% blog.comments.forEach(function(comment){%>  
+          <div class="comment">
+             <div class="d-flex justify-content-between comment-three">
+                     <h5 class="comment-user" ><a href=""><%=comment.commentUser%></a></h5>
+                     <small class="comment-time"><%=moment(comment.createdAt).fromNow()%></small>
+                     <% if(user && user.username === comment.commentUser){%>
+                             <form action="/blogs/<%=blog._id%>/<%=comment._id%>/delcomment?_method=DELETE" method="POST">
+                                  <button type="submit" class="comment-button">Del</button>
+                                  </form>
+                                  <%}%>
+                </div>   
+              
+                                
+                <div class="comment-massage">
+                  <small ><%=comment.comment%></small>
+                </div>
+                               
+                               
+    
+                              
+          </div>
+               
+                           
+                             
+                    
+                        <%})%>
+            
+            </div>
+
+            
+          
+      </div>
+      
+      
+   </div>
+   </div>
+  
+  
+    
+
+
+
+
+ 
+</div>
+ <%-include("../partials/footer2") %>

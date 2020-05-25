@@ -1,0 +1,93 @@
+<%-include("partials/header") %>
+<a href="/" class="ui icon  purple button button1">
+<i class="home icon"></i> HOME
+</a>
+<a href="/blogs/show" class="ui icon  purple button button1">
+ Blogs
+</a>
+
+
+ <% if(error && error.length>0){%>
+   <div class="ui container">
+      <div class="danger-massage" role="alert">
+           <%=error%>
+     </div>
+   </div>
+     <% } %>
+    <% if(success && success.length>0){%>
+      <div class="ui container">
+          <div class="success-massage" role="alert">
+              <%=success%>
+       </div>
+      </div>
+    <% } %>
+
+<div class="ui centered grid">
+ 
+  <div class="eight wide tablet six wide computer column">
+  <div class="ui middle aligned center aligned grid">
+
+
+
+
+
+  <div class="column">
+    <h2 class="ui teal image header">
+    
+      <div class="content">
+      Create Your Account
+      </div>
+    </h2>
+    <form class="ui large form" action="/register" method="POST">
+      <div class="ui stacked segment">
+
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input type="text" name="username" placeholder="Username">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input type="text" name="name" placeholder="Full-Name" required>
+          </div>
+        </div>
+          <div class="field">
+          <div class="ui left icon input">
+          <i class="at icon"></i>
+            <input type="email" name="email" placeholder="Gmail" required>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input type="password" name="password" placeholder="Password">
+          </div>
+        </div>
+        <div >
+         <button class="ui fluid large teal submit button" type="submit">SignUp</button></div>
+       
+        
+      </div>
+
+      <div class="ui error message">
+      
+      
+      </div>
+
+    </form>
+
+    <div class="ui message">
+      Already register? <a class=" mini ui green button"  href="/login">LogIn</a> 
+      
+    </div>
+  </div>
+</div>
+  
+  </div>
+</div>
+
+
+
+<%-include("partials/footer") %>

@@ -1,0 +1,75 @@
+.ui.centered.grid {
+    margin-top: 10.0rem;
+}
+
+.space {
+    margin-top: 170px;
+}
+
+.ui.icon.button.button1 {
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+#showcontainer {
+    margin-top: 7em;
+}
+
+.imagethumb img {
+    width: 100%;
+    height: auto;
+}
+
+.imagethumb {
+    padding: 0;
+}
+
+.repadding {
+    padding: 9px;
+}
+
+.profilespace {
+    margin-top: 40px;
+}
+
+.profileimage {
+    background-size: cover;
+    background-attachment: fixed;
+    position: fixed;
+    height: 400px;
+    width: 300px;
+    background-position: 50% 50%;
+}
+
+
+/* .jumbotron.bg-info {
+    height: 4rem;
+} */
+
+.forminline {
+    display: inline;
+}
+
+.bloggtitle {
+    color: crimson;
+}
+
+.danger-massage {
+    margin-top: 20px;
+    background-color: rgba(255, 0, 0, 0.308);
+    color: rgb(241, 14, 14);
+    height: 60px;
+    font-size: 20px;
+    padding: 20px 10px 10px 30px;
+    border-radius: 20px;
+}
+
+.success-massage {
+    margin-top: 20px;
+    background-color: rgba(7, 241, 7, 0.267);
+    color: rgb(18, 189, 3);
+    font-size: 20px;
+    height: 60px;
+    padding: 20px 10px 10px 30px;
+    border-radius: 20px;
+}
