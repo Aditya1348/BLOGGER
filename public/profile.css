@@ -72,3 +72,61 @@
 .bottom-button-delete:hover {
     background-color: rgba(99, 5, 44, 0.671);
 }
+
+.centering {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-set {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 10px 10px 10px;
+    border-radius: 15px;
+    box-shadow: 7px 10px 12px 7px rgba(0, 0, 0, 0.56);
+    width: 250px;
+}
+
+.profile-image {
+    /* width: 200px;
+    height: 200px; */
+    max-width: 200px;
+    max-height: 200px;
+    min-width: 200px;
+    min-height: 200px;
+    border-radius: 100px;
+    background-position: 50% 50%;
+}
+
+.profile-button-delete {
+    outline: none;
+    padding: 5px 17px;
+    background-color: rgb(228, 9, 38);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    transition: all 0.3s ease 0s;
+}
+
+.profile-button-delete:hover {
+    background-color: rgba(169, 0, 37, 0.685);
+}
+
+.profile-button-upload {
+    outline: none;
+    padding: 5px 17px;
+    background-color: rgb(7, 187, 31);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    transition: all 0.3s ease 0s;
+}
+
+.profile-button-upload:hover {
+    background-color: rgba(0, 169, 14, 0.575);
+}

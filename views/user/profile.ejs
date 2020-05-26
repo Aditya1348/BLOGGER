@@ -18,38 +18,37 @@
 </div>
 
 <h1 class="space"></h1>
-<div class="ui centered grid">
- 
-  <div class="eight wide tablet six wide computer column">
-  <div class="ui middle aligned center aligned grid">
-  <div class="ui segment">
-     <div >
-     <% if(user.userimage){%>
-    <img class="ui small circular image" src="<%= user.userimage %>">
+  <div class="ui container ">
+  <div class="centering">
+        <% if(user.userimage){%>
+       <div class="profile-set">
+         <img class="profile-image" src="<%= user.userimage %>">
     
       <form class="forminline" action="/user/image/<%= user._id %>/delete?_method=PUT" method="POST">
          
-             <button class="mini ui basic red button">Delete</button>
+             <button class="profile-button-delete">Delete</button>
         </form>
+       </div>
+    
     <%}else{%>
-      <img class="ui small circular image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/User_font_awesome.svg/768px-User_font_awesome.svg.png">
-      <a href="/user/image" class="mini ui basic green button">upload</a>
+      <div class="profile-set">
+          <img class="profile-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/User_font_awesome.svg/768px-User_font_awesome.svg.png">
+        <div>
+           <a href="/user/image" ><button class="profile-button-upload">Upload</button></a>
+        </div>
+       
+     
+       </div>
       <%}%>
   </div>
-  <div >
+   
+ 
+  </div>
+  
     
      
       
-  </div>
-  
-  </div>
- 
 
-
-  </div>
-  
-  </div>
-</div>
  <h1 class="spacedown"></h1>
     <div class="ui container">
       <div class="content-information">

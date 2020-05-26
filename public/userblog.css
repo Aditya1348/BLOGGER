@@ -74,7 +74,7 @@ body {
     background-color: rgb(35, 228, 9);
     border: none;
     border-radius: 50px;
-    cursor: default;
+    cursor: pointer;
     color: rgb(70, 69, 68);
     transition: all 0.3s ease 0s;
 }
@@ -89,7 +89,7 @@ body {
     background-color: rgb(228, 9, 38);
     border: none;
     border-radius: 50px;
-    cursor: default;
+    cursor: pointer;
     color: rgb(70, 69, 68);
     transition: all 0.3s ease 0s;
 }
