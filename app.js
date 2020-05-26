@@ -16,7 +16,7 @@ var blogs = require("./routes/blogs"),
 
 require("dotenv").config()
 
-mongoose.connect(process.env.DATABASE, { useUnifiedTopology: true, useNewUrlParser: true });
+mongoose.connect("mongodb://127.0.0.1:27017/BLOGGER", { useUnifiedTopology: true, useNewUrlParser: true });
 app.use(methodOverride("_method"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");

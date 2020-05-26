@@ -73,7 +73,7 @@
                                           <span class="blog-creator-span">Creator:</span><a href="/blogcreated/<%=blog.userid%>"><button title="Know about creator !!" class="blog-creator-button"><%=blog.creator%></button></a>
                                      </div>
                                      <%}%>
-                                     <h6 class="blog-time"><%=moment(blog.createdAt).fromNow()%> </h6>
+                                     <h6 class="blog-time"><%=moment().startOf(blog,'day').fromNow()%> </h6>
                                     <a class="btn btn-primary d-flex justify-content-center" href="/blogs/<%= blog._id %>/about" role="button">More Info</a>
                                 </div>
                                 <% })%>

@@ -168,6 +168,15 @@ header {
     padding: 10px 10px 10px 10px;
 }
 
+.comment-time {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.comment-user {
+    color: rgb(247, 4, 146);
+}
+
 .comment-massage small {
     font-size: 16px;
     font-weight: 500;

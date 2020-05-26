@@ -43,7 +43,7 @@
    <div class="row">
         <div class="col-md-3">
        <h2 class="lead blog-info">BLOG INFO</h2>
-       <h4 class="time1-improve"><%=moment(blog.createdAt).fromNow()%></h4>
+       <h4 class="time1-improve"><%=moment().startOf(blog,'day').fromNow()%> </h4>
 
 <div class="pos-f-t">
   <div class="collapse" id="navbarToggleExternalContent">
@@ -78,8 +78,8 @@
     <% blog.comments.forEach(function(comment){%>  
           <div class="comment">
              <div class="d-flex justify-content-between comment-three">
-                     <h5 class="comment-user" ><a href=""><%=comment.commentUser%></a></h5>
-                     <small class="comment-time"><%=moment(comment.createdAt).fromNow()%></small>
+                     <h5  ><a class="comment-user" href=""><%=comment.commentUser%></a></h5>
+                     <small class="comment-time"><%=moment().startOf(comment,'day').fromNow()%> </small>
                      <% if(user && user.username === comment.commentUser){%>
                              <form action="/blogs/<%=blog._id%>/<%=comment._id%>/delcomment?_method=DELETE" method="POST">
                                   <button type="submit" class="comment-button">Del</button>
