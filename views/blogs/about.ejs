@@ -40,6 +40,16 @@
 </div>
   <p class="space"></p>
 <div id="showcontainer" class="container">
+  <% if(error && error.length>0){%>
+            <div class="alert alert-danger" role="alert">
+                <%=error%>
+            </div>
+            <% } %>
+                <% if(success && success.length>0){%>
+                    <div class="alert alert-success" role="alert">
+                        <%=success%>
+                    </div>
+                    <% } %>
    <div class="row">
         <div class="col-md-3">
        <h2 class="lead blog-info">BLOG INFO</h2>
@@ -57,9 +67,14 @@
       <span class="navbar-toggler-icon"></span>
     </button>
   </nav>
+   
+  
 </div>
    </div>
-   
+
+  
+  
+
    <div class="col-md-9">
       <div class="img-thumbnail">
          
@@ -74,7 +89,15 @@
             </p>
          
             </div>
-           <a href="/blogs/<%=blog._id%>/newcomment" ><button class="Add-comment-button">Add Comment</button></a>
+            <div class="d-flex justify-content-between">
+               <a href="/blogs/<%=blog._id%>/newcomment" ><button class="Add-comment-button">Add Comment</button></a>
+               <div>
+                 <a href="/blogs/<%=blog._id%>/like"><button class="button-like" >Likes   <span class="like-background"><%=blog.totalLikes%></span></button></a>
+  
+                 <a href="/blogs/<%=blog._id%>/dislike"><button class="button-dislike">Dislike   <span class="dislike-background"><%=blog.totalDislikes%></span></button></a>
+               </div>
+            </div>
+          
     <% blog.comments.forEach(function(comment){%>  
           <div class="comment">
              <div class="d-flex justify-content-between comment-three">

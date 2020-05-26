@@ -191,7 +191,8 @@ header {
     border: none;
     border-radius: 50px;
     cursor: default;
-    color: rgb(70, 69, 68);
+    font-weight: 600;
+    color: rgb(0, 0, 0);
     transition: all 0.3s ease 0s;
     cursor: pointer;
 }
@@ -239,4 +240,44 @@ header {
     font-weight: 700;
     letter-spacing: 2px;
     font-size: 20px;
+}
+
+.button-like {
+    outline: none;
+    padding: 10px 20px;
+    background-color: rgb(21, 192, 5);
+    box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.61);
+    border: none;
+    border-radius: 50px;
+    cursor: default;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+
+.button-dislike {
+    outline: none;
+    padding: 10px 20px;
+    background-color: rgb(192, 5, 83);
+    box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.61);
+    border: none;
+    border-radius: 50px;
+    cursor: default;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+
+.like-background {
+    background-color: white;
+    padding: 3px 7px 3px 7px;
+    border-radius: 100px;
+}
+
+.dislike-background {
+    background-color: white;
+    padding: 3px 7px 3px 7px;
+    border-radius: 100px;
 }

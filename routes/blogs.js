@@ -4,6 +4,9 @@ var Blogs = require("../models/blog");
 var middleware = require("../middleware/index");
 var Comment = require("../models/comment");
 var moment = require("moment-timezone");
+var Like = require("../models/like");
+var Dislike = require("../models/dislike")
+
 require("dotenv").config();
 var multer = require('multer');
 var storage = multer.diskStorage({
@@ -75,7 +78,119 @@ router.get("/blogs/:id/about", function(req, res) {
             res.render("blogs/about", { blog: found });
         }
     })
-})
+});
+
+router.get("/blogs/:blogId/dislike", middleware.isLoggedIn, function(req, res) {
+    Blogs.findById(req.params.blogId, function(err, found) {
+        console.log(found)
+        Dislike.find({ dislikeUser: req.user.username }, function(err, finddislike) {
+
+            if (finddislike[0] !== undefined) {
+                req.flash("error", "You have already did that");
+                return res.redirect("/blogs/" + req.params.blogId + "/about");
+
+            } else {
+                Dislike.create({ dislikeUser: req.user.username, dislike: 1 }, function(err, created) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+
+                        found.dislikes.push(created);
+                        found.save()
+
+                        Blogs.findByIdAndUpdate(req.params.blogId, { totalDislikes: Adition(found.totalDislikes) }, function(err, updated) {
+                            if (err) {
+                                console.log(err);
+                            } else {
+                                Like.find({ likeUser: req.user.username }, function(err, likefound) {
+                                    if (likefound[0] !== undefined) {
+                                        Like.findOneAndDelete({ likeUser: req.user.username }, function(err, deletd) {
+                                            if (err) {
+                                                console.log(err);
+                                            } else {
+                                                Blogs.findByIdAndUpdate(req.params.blogId, { totalLikes: Substraction(found.totalLikes) }, function(err, updated) {
+                                                    if (err) {
+                                                        console.log(err);
+                                                    } else {
+                                                        return res.redirect("/blogs/" + req.params.blogId + "/about");
+                                                    }
+                                                })
+                                            }
+                                        })
+                                    } else {
+
+                                        return res.redirect("/blogs/" + req.params.blogId + "/about");
+                                    }
+                                })
+                            }
+                        })
+                    }
+                })
+            }
+        })
+
+
+
+    })
+});
+router.get("/blogs/:blogId/like", middleware.isLoggedIn, function(req, res) {
+
+    Blogs.findById(req.params.blogId, function(err, found) {
+        console.log(found)
+        Like.find({ likeUser: req.user.username }, function(err, findlkes) {
+
+            if (findlkes[0] !== undefined) {
+                req.flash("error", "You have already did that");
+                return res.redirect("/blogs/" + req.params.blogId + "/about");
+
+
+
+            } else {
+                Like.create({ likeUser: req.user.username, like: 1 }, function(err, created) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+
+                        found.likes.push(created);
+                        found.save()
+
+
+
+                        Blogs.findByIdAndUpdate(req.params.blogId, { totalLikes: Adition(found.totalLikes) }, function(err, updated) {
+                            if (err) {
+                                console.log(err);
+                            } else {
+                                Dislike.find({ dislikeUser: req.user.username }, function(err, dislikefound) {
+                                    if (dislikefound[0] !== undefined) {
+                                        Dislike.findOneAndDelete({ dislikeUser: req.user.username }, function(err, deletd) {
+                                            if (err) {
+                                                console.log(err);
+                                            } else {
+                                                Blogs.findByIdAndUpdate(req.params.blogId, { totalDislikes: Substraction(found.totalDislikes) }, function(err, updated) {
+                                                    if (err) {
+                                                        console.log(err);
+                                                    } else {
+                                                        return res.redirect("/blogs/" + req.params.blogId + "/about");
+                                                    }
+                                                })
+                                            }
+                                        })
+                                    } else {
+
+                                        return res.redirect("/blogs/" + req.params.blogId + "/about");
+                                    }
+                                })
+                            }
+                        })
+                    }
+                })
+            }
+        })
+
+
+
+    })
+});
 
 router.get("/blogs/:creator/userblog", middleware.isLoggedIn, function(req, res) {
     Blogs.find({ creator: req.params.creator }, function(err, found) {
@@ -88,7 +203,7 @@ router.get("/blogs/:creator/userblog", middleware.isLoggedIn, function(req, res)
             res.render("blogs/userblog", { found: found });
         }
     })
-})
+});
 router.delete("/blogs/:blogId/delete", middleware.isLoggedIn, function(req, res) {
     Blogs.findByIdAndDelete(req.params.blogId, function(err, deleted) {
 
@@ -107,16 +222,18 @@ router.delete("/blogs/:blogId/delete", middleware.isLoggedIn, function(req, res)
 
         }
     })
-})
+});
 router.get("/blogs/:blogId/edit", middleware.isLoggedIn, function(req, res) {
     Blogs.findById(req.params.blogId, function(err, found) {
+
+
         if (err) {
             return res.redirect("back");
         } else {
             res.render("blogs/editMyblog", { found: found })
         }
     })
-})
+});
 router.put("/blogs/:blogId/edit", middleware.isLoggedIn, function(req, res) {
     console.log(req.body.data)
     Blogs.findByIdAndUpdate(req.params.blogId, req.body.data, function(err, found) {
@@ -127,6 +244,25 @@ router.put("/blogs/:blogId/edit", middleware.isLoggedIn, function(req, res) {
             res.redirect("/blogs/" + req.user.username + "/userblog");
         }
     })
-})
+});
+
+function Adition(num) {
+    if (num === null) {
+        return 1;
+    } else {
+        return num + 1;
+    }
+
+}
+
+function Substraction(num) {
+    if (num === null) {
+        return 1;
+    } else {
+        return num - 1
+    }
+}
+
+
 
 module.exports = router;

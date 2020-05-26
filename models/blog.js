@@ -7,6 +7,22 @@ var blogSchema = new mongoose.Schema({
     userid: String,
     creator: String,
     time: String,
+    totalDislikes: {
+        type: Number,
+        default: 0
+    },
+    totalLikes: {
+        type: Number,
+        default: 0
+    },
+    likes: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Like"
+    }],
+    dislikes: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Dislike"
+    }],
     comments: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Comment"
