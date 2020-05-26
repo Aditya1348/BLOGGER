@@ -2,7 +2,8 @@ var express = require("express");
 var router = express.Router();
 var Blogs = require("../models/blog");
 var middleware = require("../middleware/index");
-var Comment = require("../models/comment")
+var Comment = require("../models/comment");
+var moment = require("moment")
 router.get("/blogs/:blogid/newcomment", middleware.isLoggedIn, function(req, res) {
     Blogs.findById(req.params.blogid, function(err, foundblog) {
         if (err) {
@@ -23,7 +24,7 @@ router.post("/blogs/:blogid/newcomment", middleware.isLoggedIn, function(req, re
             console.log(err);
         } else {
 
-            Comment.create({ comment: req.body.comment, commentUser: req.user.username, userid: req.user._id }, function(err, comment) {
+            Comment.create({ comment: req.body.comment, commentUser: req.user.username, userid: req.user._id, time: moment().format("[PostedAt: ] LL [/] LT") }, function(err, comment) {
                 if (err) {
                     console.log(err);
                     res.redirect("back");

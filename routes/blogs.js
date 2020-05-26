@@ -3,6 +3,7 @@ var router = express.Router();
 var Blogs = require("../models/blog");
 var middleware = require("../middleware/index");
 var Comment = require("../models/comment");
+var moment = require("moment");
 require("dotenv").config();
 var multer = require('multer');
 var storage = multer.diskStorage({
@@ -46,11 +47,12 @@ router.post("/blogs/new", middleware.isLoggedIn, upload.single('image'), functio
         req.body.blog.image = result.secure_url;
         req.body.blog.userid = req.user._id;
         req.body.blog.creator = req.user.username;
-        // add author to campground
-        // req.body.campground.author = {
-        //     id: req.user._id,
-        //     username: req.user.username
-        // };
+        req.body.blog.time = moment().format("[PostedAt: ] LL [/] LT")
+            // add author to campground
+            // req.body.campground.author = {
+            //     id: req.user._id,
+            //     username: req.user.username
+            // };
         Blogs.create(req.body.blog, function(err, blogcreated) {
             if (err) {
                 // req.flash('error', err.message);
